@@ -28,11 +28,13 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install scikit-learn pandas matplotlib seaborn joblib
 python src/train_models.py
+ ```
 
 when you're done:
 
 ```bash
 deactivate
+ ```
 ---
 ### Option 2 – Using conda
 
@@ -41,6 +43,7 @@ conda create -n aeb python=3.8
 conda activate aeb
 pip install scikit-learn pandas matplotlib seaborn joblib
 jupyter notebook notebooks/ML_Based_AEB_Project_with_MetaDrive_Simulator.ipynb
+ ```
 
 Then run the notebook cells in order to:
 
