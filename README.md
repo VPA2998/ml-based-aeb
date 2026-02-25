@@ -1,16 +1,29 @@
-# ML-Based Autonomous Emergency Braking (AEB)
+# 🚗 ML-Based Autonomous Emergency Braking (AEB) using Metadrive Simulator
 
 This project implements a machine learning–based Autonomous Emergency Braking (AEB) decision module using tabular data. It predicts **whether to brake** and **how strongly to brake** based on ego vehicle speed, relative speed, and distance to the lead vehicle.
 
-## Project structure
+![title](assets/title.png)
 
-- `data/aeb_dataset.csv` – Tabular dataset used for training the models.
-- `src/train_models.py` – Script to train and evaluate:
-  - A `RandomForestClassifier` for `brake_flag` (0 = no brake, 1 = brake).
-  - A `RandomForestRegressor` for `brake_value` (continuous brake intensity).
-- `src/demo_inference.py` – Loads the saved models and runs demo scenarios.
-- `models/` – Saved `.joblib` models (created after training).
-- `ML_Based_AEB_Project_with_MetaDrive_Simulator.ipynb` – Original notebook used for data exploration and export. 
+# **Project structure**
+
+```text
+ml-based-aeb/
+├── data/
+│   └── aeb_dataset.csv – Tabular dataset used for training the models.
+├── models/  – Saved `.joblib` models (created after training).
+│   ├── rf_brake_classifier.joblib
+│   └── rf_brake_regressor.joblib
+├── src/
+│   ├── train_models.py - Script to train and evaluate: `brake_flag` & `brake_value`.
+│   └── demo_inference.py - Loads the saved models and runs demo scenarios.
+├── assets/
+│   
+├── ML_Based_AEB_Project_with_MetaDrive_Simulator.ipynb – Original notebook used for data. 
+├── README.md
+├── requirements.txt
+└── .gitignore
+```
+---
 
 ## Installation
 
@@ -77,7 +90,7 @@ After training, run:
   ```bash
   python src/demo_inference.py
   ```
-This script:
+This will:
 
 - Loads both models from models/.
 
@@ -106,8 +119,17 @@ On the included dataset, the current models achieve approximately:
 
     - R² ≈ 0.996, indicating that the model explains most of the variance in the target. 
 
-(Exact numbers may vary slightly depending on random seeds and dataset updates.)
+	![confusion_matrix_1](assets/Conf_matrix_logreg.png)
+  ![confusion_matrix_2](assets/Conf_matrix_svm.png)
+  ![confusion_matrix_3](assets/Conf_matrix_rf.png)  
 
+(Exact numbers may vary slightly depending on random seeds and dataset updates.)
+---
+## Visuals:
+
+![Simulation_result](assets/scene_pred.gif) 
+
+---
 ## Future work
 - [ ] Connect this AEB decision module with a driving simulator (e.g., MetaDrive or CARLA) for closed-loop testing.
 
