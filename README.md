@@ -10,7 +10,7 @@ This project implements a machine learning–based Autonomous Emergency Braking 
   - A `RandomForestRegressor` for `brake_value` (continuous brake intensity).
 - `src/demo_inference.py` – Loads the saved models and runs demo scenarios.
 - `models/` – Saved `.joblib` models (created after training).
-- `ML_Based_AEB_Project_with_MetaDrive_Simulator.ipynb` – Original notebook used for data exploration and export. [web:180][web:181]
+- `ML_Based_AEB_Project_with_MetaDrive_Simulator.ipynb` – Original notebook used for data exploration and export. 
 
 ## Installation
 
@@ -43,7 +43,7 @@ distance
 
 brake_flag
 
-brake_value [web:186]
+brake_value
 
 The dataset is assumed to come from AEB simulation runs (e.g., MetaDrive or similar), where each row corresponds to a timestep or scenario snapshot.
 ---
@@ -90,9 +90,9 @@ This script:
 
   - Regressor prediction: continuous brake_value for the same scenario.
 
-You can edit the run_demo_scenario function in src/demo_inference.py to test different AEB situations (e.g., high speed and short distance vs safe following distance). [web:195][web:199]
+  You can edit the run_demo_scenario function in src/demo_inference.py to test different AEB situations (e.g., high speed and short distance vs safe following distance). 
 ---
-#### Results (current)
+### Results (current)
 On the included dataset, the current models achieve approximately:
 
   - Classification (brake_flag)
@@ -105,7 +105,7 @@ On the included dataset, the current models achieve approximately:
 
     - MSE ≈ 0.0005
 
-    - R² ≈ 0.996, indicating that the model explains most of the variance in the target. [web:170][web:175]
+    - R² ≈ 0.996, indicating that the model explains most of the variance in the target. 
 
 (Exact numbers may vary slightly depending on random seeds and dataset updates.)
 
@@ -116,4 +116,4 @@ On the included dataset, the current models achieve approximately:
 
 - Implement scenario-based evaluation and logging for different NCAP-style test cases.
 
-- Package the model into a small service (REST API, gRPC, or ROS2 node) for integration into larger ADAS stacks. [web:180][web:185]
+- Package the model into a small service (REST API, gRPC, or ROS2 node) for integration into larger ADAS stacks. 
