@@ -15,3 +15,29 @@ This project trains machine learning models for Automatic Emergency Braking usin
 
 - `notebooks/ML_Based_AEB_Project_with_MetaDrive_Simulator.ipynb` – full experiment in Colab style.
 - `src/train_models.py` – script where the training pipeline will be extracted and cleaned.
+---
+
+## How to run
+
+1. Create a Python environment (example with conda):
+
+   ```bash
+   conda create -n aeb python=3.8
+   conda activate aeb
+
+2. Install basic dependencies 
+
+pip install scikit-learn pandas matplotlib seaborn joblib
+
+3. Open the notebook
+
+jupyter notebook 
+notebooks/ML_Based_AEB_Project_with_MetaDrive_Simulator.ipynb
+
+4. Run the cells in order to:
+
+- Collect simulation data (in Colab / MetaDrive setup).
+
+- Train models.
+
+- View evaluation metrics and plots.
