@@ -27,12 +27,14 @@ This project trains machine learning models for Automatic Emergency Braking usin
 
 2. Install basic dependencies 
 
-pip install scikit-learn pandas matplotlib seaborn joblib
+   ```bash
+    pip install scikit-learn pandas matplotlib seaborn joblib
 
 3. Open the notebook
 
-jupyter notebook 
-notebooks/ML_Based_AEB_Project_with_MetaDrive_Simulator.ipynb
+   ```bash
+    jupyter notebook 
+    notebooks/ML_Based_AEB_Project_with_MetaDrive_Simulator.ipynb
 
 4. Run the cells in order to:
 
