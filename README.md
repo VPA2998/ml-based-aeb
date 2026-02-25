@@ -32,20 +32,20 @@ source .venv/bin/activate   # Linux/macOS
 pip install -r requirements.txt
 ```
 ---
-### Data
+## Data
 Ensure data/aeb_dataset.csv exists and matches the expected schema, including at least:
 
-ego_speed
+1. ego_speed
 
-rel_speed
+2. rel_speed
 
-distance
+3. distance
 
-brake_flag
+4. brake_flag
 
-brake_value
+5. brake_value
 
-The dataset is assumed to come from AEB simulation runs (e.g., MetaDrive or similar), where each row corresponds to a timestep or scenario snapshot.
+> The dataset is assumed to come from AEB simulation runs (e.g., MetaDrive or similar), where each row corresponds to a timestep or scenario snapshot.
 ---
 ### How to run
 1. Train models
@@ -54,7 +54,6 @@ From the project root, run:
 python src/train_models.py
 ```
 This will:
-
 - Clean the data by replacing infinite values and dropping rows with missing key fields.
 
 - Train a classification model (RandomForestClassifier) for brake_flag.
@@ -90,9 +89,9 @@ This script:
 
   - Regressor prediction: continuous brake_value for the same scenario.
 
-  You can edit the run_demo_scenario function in src/demo_inference.py to test different AEB situations (e.g., high speed and short distance vs safe following distance). 
+> You can edit the run_demo_scenario function in src/demo_inference.py to test different AEB situations (e.g., high speed and short distance vs safe following distance). 
 ---
-### Results (current)
+## Results (current)
 On the included dataset, the current models achieve approximately:
 
   - Classification (brake_flag)
@@ -110,10 +109,10 @@ On the included dataset, the current models achieve approximately:
 (Exact numbers may vary slightly depending on random seeds and dataset updates.)
 
 ## Future work
-- Connect this AEB decision module with a driving simulator (e.g., MetaDrive or CARLA) for closed-loop testing.
+- [ ] Connect this AEB decision module with a driving simulator (e.g., MetaDrive or CARLA) for closed-loop testing.
 
-- Add more features (e.g., relative acceleration, time-to-collision, lane information).
+- [ ] Add more features (e.g., relative acceleration, time-to-collision, lane information).
 
-- Implement scenario-based evaluation and logging for different NCAP-style test cases.
+- [ ] Implement scenario-based evaluation and logging for different NCAP-style test cases.
 
-- Package the model into a small service (REST API, gRPC, or ROS2 node) for integration into larger ADAS stacks. 
+- [ ] Package the model into a small service (REST API, gRPC, or ROS2 node) for integration into larger ADAS stacks. 
