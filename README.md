@@ -18,61 +18,33 @@ This project trains machine learning models for Automatic Emergency Braking usin
 ---
 
 ## How to run
----
-- (optional but recommended):
 
-text
-### (Recommended) Use virtual environment
+### Option 1 – Recommended: virtual environment (local)
 
 From the project root:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt  # will be added later
-text
+pip install scikit-learn pandas matplotlib seaborn joblib
+python src/train_models.py
 
-For now you can skip committing this if you’re tired; the key is:
+when you're done:
 
-- Always run project commands like:
-  ```bash
-  cd ~/ml-based-aeb
-  source .venv/bin/activate
-  python src/train_models.py
-When done, deactivate venv with:
-
-bash
+```bash
 deactivate
-If you want to continue later, next steps will be:
-
-export a CSV from the notebook,
-
-point train_models.py to it,
-
-move actual training code over.
-
 ---
+### Option 2 – Using conda
 
-1. Create a Python environment (example with conda):
+```bash
+conda create -n aeb python=3.8
+conda activate aeb
+pip install scikit-learn pandas matplotlib seaborn joblib
+jupyter notebook notebooks/ML_Based_AEB_Project_with_MetaDrive_Simulator.ipynb
 
-   ```bash
-   conda create -n aeb python=3.8
-   conda activate aeb
+Then run the notebook cells in order to:
 
-2. Install basic dependencies 
-
-   ```bash
-    pip install scikit-learn pandas matplotlib seaborn joblib
-
-3. Open the notebook
-
-   ```bash
-    jupyter notebook 
-    notebooks/ML_Based_AEB_Project_with_MetaDrive_Simulator.ipynb
-
-4. Run the cells in order to:
-
-- Collect simulation data (in Colab / MetaDrive setup).
+- Collect simulation data (MetaDrive / Colab setup).
 
 - Train models.
 
